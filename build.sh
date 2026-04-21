@@ -19,7 +19,7 @@ ANYKERNEL_REPO="https://github.com/waheiiiddd-lab/AnyKernel345"
 ANYKERNEL_BRANCH="master"
 
 if [[ "$KVER" == "5.10" ]]; then
-  KERNEL_DEFCONFIG="otag_defconfig"
+  KERNEL_DEFCONFIG="gki_defconfig"
 else
   KERNEL_DEFCONFIG="quartix_defconfig"
 fi
