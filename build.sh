@@ -11,11 +11,11 @@ elif [[ "$KVER" == "6.1" ]]; then
   RELEASE="v0.1"
 fi
 
-KERNEL_NAME="OtagKernel"
-USER="eraselk"
-HOST="gacorprjkt"
-TIMEZONE="Asia/Makassar"
-ANYKERNEL_REPO="https://github.com/linastorvaldz/AnyKernel3"
+KERNEL_NAME="zixine-elysium-inline"
+USER="zixine"
+HOST="zixineproject"
+TIMEZONE="Asia/Jakarta"
+ANYKERNEL_REPO="https://github.com/waheiiiddd-lab/AnyKernel345"
 ANYKERNEL_BRANCH="master"
 
 if [[ "$KVER" == "5.10" ]]; then
@@ -31,8 +31,8 @@ elif [[ "$KVER" == "6.1" ]]; then
   KERNEL_REPO="https://github.com/linastorvaldz/kernel-android14-6.1"
   KERNEL_BRANCH="android14-6.1-lts"
 elif [[ "$KVER" == "5.10" ]]; then
-  KERNEL_REPO="https://github.com/linastorvaldz/kernel-android12-5.10"
-  KERNEL_BRANCH="rebase"
+  KERNEL_REPO="https://github.com/waheiiiddd-lab/Kolor-ijo"
+  KERNEL_BRANCH="lts"
 fi
 
 DEFCONFIG_TO_MERGE=""
