@@ -147,11 +147,14 @@ if ksu_included; then
 
   cd KernelSU-Next
   patch -p1 < "$KERNEL_PATCHES/ksu/ksun-add-more-managers-support.patch"
-    # ---------------- Start Adding Code ---------------- #
+# ---------------- Mulai Penambahan Kode ---------------- #
   log "Menambahkan jalur header SELinux ke Makefile KernelSU..."
   echo 'ccflags-y += -I$(srctree)/security/selinux' >> Makefile
   echo 'ccflags-y += -I$(srctree)/security/selinux/include' >> Makefile
-  # ---------------- Code Addition Completed -------------- #
+  # Tambahkan jalur ke folder OUT (objtree) untuk out-of-tree build:
+  echo 'ccflags-y += -I$(objtree)/security/selinux' >> Makefile
+  echo 'ccflags-y += -I$(objtree)/security/selinux/include' >> Makefile
+  # ---------------- Selesai Penambahan Kode -------------- #
   cd "$OLDPWD"
 fi
 
