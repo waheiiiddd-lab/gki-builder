@@ -120,6 +120,13 @@ COMPILER_STRING=$(clang --version | head -n 1 | sed 's/(https..*//' | sed 's/ ve
 
 cd "$KSRC"
 
+# ---------------- Start Adding Code ---------------- #
+log "Menerapkan custom patch untuk module.c dan drm_atomic_helper.c..."
+sed -i '/pr_warn.*disagrees about version of symbol.*/,+1 s/.*/return 1;/' kernel/module.c
+sed -i '/^static int drm_atomic_check_valid_clones/,/^}/d' drivers/gpu/drm/drm_atomic_helper.c
+sed -i '/ret = drm_atomic_check_valid_clones/,/return ret;/d' drivers/gpu/drm/drm_atomic_helper.c
+# ---------------- Code Addition Completed -------------- #
+
 ## KernelSU setup
 if ksu_included; then
   # Remove existing KernelSU drivers
